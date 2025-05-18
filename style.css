@@ -1,86 +1,302 @@
-/* style.css */
-:root {
-  --primary: #1f2937;
-  --accent: #2563eb;
-  --background: #f9fafb;
-  --white: #ffffff;
-  --text-dark: #111827;
-  --text-light: #6b7280;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --bg: #0e0e10; /* Deep dark background */
+  --text: #f1f1f1; /* Light text */
+  --muted: #a3a3a3; /* Muted text */
+  --accent: #00bcd4; /* Cyan/Teal accent */
+  --card: #1c1c1e; /* Slightly lighter dark for cards */
+  --border: #333; /* Subtle border */
+  --hover-accent: #1de9b6; /* Brighter teal hover */
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: var(--background);
-  color: var(--text-dark);
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }
 
-header {
-  background: var(--primary);
-  color: var(--white);
-  padding: 3rem 1rem;
+/* NAVBAR */
+.navbar {
+  background: var(--card);
+  padding: 0.8rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--accent);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.nav-links a {
+  margin-left: 1.2rem;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--hover-accent);
+}
+
+/* Contact and About Sections - Compact and readable */
+#contact, #about {
+  max-width: 480px;
+  padding: 1rem 1.2rem;
+  margin: 1.2rem auto;
+  background: var(--card);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  border: 1px solid var(--border);
+}
+
+#contact h2, #about h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: var(--accent);
+  font-weight: 700;
   text-align: center;
 }
 
-header h1 {
-  font-size: 2.5rem;
+#contact p, #about p {
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
 }
 
-header p {
-  font-size: 1.2rem;
-  color: #d1d5db;
-}
-
-section {
-  padding: 2.5rem 1rem;
-  max-width: 900px;
-  margin: auto;
-  background: var(--white);
-  margin-bottom: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-h2 {
+#contact strong {
   color: var(--accent);
+}
+
+#contact a {
+  color: var(--hover-accent);
+  transition: color 0.3s ease;
+}
+
+#contact a:hover {
+  color: var(--accent);
+}
+
+/* Skills Section - subtle and listed */
+#skills {
+  max-width: 480px;
+  margin: 1.5rem auto;
+  padding: 1rem 1.2rem;
+  background: var(--card);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  border: 1px solid var(--border);
+}
+
+#skills h2 {
+  font-size: 1.7rem;
+  color: var(--accent);
+  font-weight: 700;
   margin-bottom: 1rem;
-  font-size: 1.6rem;
-  border-bottom: 2px solid var(--accent);
-  display: inline-block;
-  padding-bottom: 5px;
+  text-align: center;
+}
+
+#skills ul {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+#skills li {
+  margin-bottom: 0.4rem;
+}
+
+/* Projects Section */
+#projects {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--card);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border: 1px solid var(--border);
+}
+
+#projects h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+  text-align: center;
+  font-weight: 700;
+}
+
+.project {
+  margin-bottom: 2rem;
+  padding: 1.8rem;
+  background-color: var(--bg);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:last-child {
+  margin-bottom: 0;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
 }
 
 .project h3 {
-  color: var(--primary);
-  margin-top: 1rem;
-  font-size: 1.2rem;
-}
-
-ul {
-  list-style: square;
-  margin-left: 1.5rem;
-  color: var(--text-light);
-}
-
-a {
   color: var(--accent);
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.project ul {
+  margin-top: 0.8rem;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.project li {
+  margin-bottom: 0.4rem;
+}
+
+/* Resume Section */
+#resume {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+#resume h2 {
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.button {
+  background: var(--accent);
+  color: var(--bg);
+  padding: 0.7rem 1.3rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
   text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-a:hover {
-  text-decoration: underline;
+.button:hover {
+  background: var(--hover-accent);
+  transform: translateY(-2px);
 }
 
+/* Footer */
 footer {
   text-align: center;
-  background: var(--primary);
-  color: var(--white);
-  padding: 1rem;
-  font-size: 0.9rem;
+  padding: 1.5rem;
+  background: var(--card);
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    margin-top: 0.6rem;
+  }
+
+  .nav-links a {
+    display: block;
+    margin-left: 0;
+    margin-bottom: 0.4rem;
+  }
+
+  section, #contact, #about, #skills {
+    padding: 1rem 1.2rem;
+    margin: 1rem auto;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+  }
+
+  #skills ul {
+    padding-left: 1rem;
+  }
+
+  .button {
+    padding: 0.6rem 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.7rem 1rem;
+  }
+
+  .brand {
+    font-size: 1.3rem;
+  }
+
+  .nav-links a {
+    margin-left: 0.8rem;
+  }
+
+  section, #contact, #about, #skills {
+    padding: 0.8rem 1rem;
+    margin: 0.8rem auto;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  #skills li {
+    font-size: 0.85rem;
+  }
+
+  .button {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
 }

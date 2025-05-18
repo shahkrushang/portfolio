@@ -2,87 +2,234 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Krushang Shah | Java Backend Developer</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Krushang Shah | Backend Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+    }
+
+    /* Root colors */
+    :root {
+      --bg: #0e0e10;
+      --text: #f1f1f1;
+      --muted: #a3a3a3;
+      --accent: #00bcd4;
+      --hover-accent: #1de9b6;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.4;
+      padding: 1rem 1.2rem 2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--accent);
+      margin-bottom: 1.2rem;
+    }
+    .brand {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--accent);
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      margin-left: 1rem;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover {
+      color: var(--hover-accent);
+    }
+
+    /* Section titles */
+    h2 {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-bottom: 0.6rem;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 0.25rem;
+    }
+
+    /* Contact and About sections */
+    #contact p,
+    #about p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 0.4rem;
+      line-height: 1.3;
+    }
+    #contact a,
+    #about a {
+      color: var(--hover-accent);
+      text-decoration: none;
+    }
+    #contact a:hover,
+    #about a:hover {
+      color: var(--accent);
+    }
+
+    /* Skills */
+    #skills ul {
+      list-style-type: disc;
+      padding-left: 1.3rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 1rem;
+    }
+    #skills li {
+      margin-bottom: 0.3rem;
+    }
+
+    /* Projects */
+    #projects h2 {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    .project h3 {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+    .project ul {
+      list-style-type: disc;
+      padding-left: 1.3rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    .project li {
+      margin-bottom: 0.3rem;
+    }
+
+    /* Resume */
+    #resume {
+      margin-top: 1rem;
+      text-align: center;
+    }
+    #resume a.button {
+      background: var(--accent);
+      color: var(--bg);
+      padding: 0.5rem 1rem;
+      font-weight: 600;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: background 0.3s ease;
+      display: inline-block;
+    }
+    #resume a.button:hover {
+      background: var(--hover-accent);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.75rem;
+      margin-top: 2rem;
+      padding-bottom: 1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem 0.8rem 2rem;
+      }
+      .nav-links a {
+        margin-left: 0.8rem;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Krushang Shah</h1>
-    <p>Senior Java Backend Developer | 5+ Years Experience</p>
-  </header>
+  <nav class="navbar">
+    <div class="brand">Krushang Shah</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+    </div>
+  </nav>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p><strong>Email:</strong> <a href="mailto:krushngshh@gmail.com">krushngshh@gmail.com</a></p>
+    <p><strong>Phone:</strong> +91-8866726303</p>
+    <p><strong>LinkedIn:</strong> <a href="https://in.linkedin.com/in/krushang-shah" target="_blank" rel="noopener noreferrer">Krushang Shah</a></p>
+  </section>
 
   <section id="about">
-    <h2>👋 About Me</h2>
+    <h2>About Me</h2>
     <p>
-      I’m a results-driven Java Software Engineer with 5+ years of experience building
-      scalable, high-performance microservices using Spring Boot, Hibernate, and PostgreSQL.
-      I've contributed to large-scale telecom and fintech systems with a strong focus on clean architecture,
-      test-driven development, and seamless deployments in Agile environments.
+      I'm a Java backend developer with over 5 years of industry experience delivering scalable, reliable, and high-performance backend systems. I specialize in building microservices architecture using Spring Boot, Hibernate, and PostgreSQL. My expertise spans across the full software development lifecycle—from initial design and development to testing, deployment, and monitoring in production.
     </p>
   </section>
 
   <section id="skills">
-    <h2>🛠️ Skills</h2>
+    <h2>Skills</h2>
     <ul>
-      <li><strong>Languages:</strong> Java 17, C</li>
-      <li><strong>Frameworks:</strong> Spring Boot, Spring WebFlux, Microservices, Hibernate, JPA</li>
-      <li><strong>Databases:</strong> PostgreSQL, SQL, Cassandra</li>
-      <li><strong>Tools:</strong> GitLab, Jenkins, SonarQube, JIRA, Kibana</li>
-      <li><strong>Development:</strong> Test-Driven Development, CI/CD, REST APIs</li>
+      <li>Java 17, C</li>
+      <li>Spring Boot, WebFlux, Microservices</li>
+      <li>PostgreSQL, SQL, Cassandra</li>
+      <li>Jenkins, GitLab, SonarQube</li>
+      <li>REST APIs, Test-Driven Development</li>
     </ul>
   </section>
 
   <section id="projects">
-    <h2>🚀 Projects</h2>
+    <h2>Work Experience / Projects</h2>
 
     <div class="project">
-      <h3>📡 Telecommunication Microservices Platform – HCL Tech</h3>
-      <p>
-        Developed and deployed scalable microservices architecture for a major telecom platform.
-        Engineered RESTful APIs using Spring Boot to support home and mobile internet services,
-        reducing response time by 20% and increasing customer satisfaction by 15%.
-      </p>
-      <p>
-        Applied test-driven development practices to reduce critical bugs by 5%. Leveraged CI/CD pipelines
-        using GitLab and Jenkins for seamless deployment and ensured system reliability during peak loads
-        with effective logging and monitoring via Kibana.
-      </p>
-      <p>
-        Collaborated with cross-functional teams and delivered production-ready modules under tight deadlines,
-        enhancing delivery confidence and system robustness.
-      </p>
+      <h3>Telecom Microservices Platform – HCL Tech</h3>
+      <ul>
+        <li>Spearheaded the implementation of multiple microservices and restful APIs for different modules as a backend engineer.</li>
+        <li>Developed secure and scalable RESTful APIs using Spring Boot and WebFlux, resulting in a 20% improvement in system response time.</li>
+        <li>Defined service interfaces and monitored performance with tools like Kibana and SonarQube.</li>
+        <li>Collaborated closely with cross-functional teams to roll out production-ready features in agile sprints.</li>
+        <li>Ensured high code quality and zero downtime during releases.</li>
+      </ul>
     </div>
 
     <div class="project">
-      <h3>💰 GST Filing and Reconciliation System – Supertax</h3>
-      <p>
-        Built a full-featured tax filing system enabling users to upload invoices, perform reconciliation,
-        and file returns via GST portal integration. Integrated third-party systems through REST APIs
-        for billing and file management.
-      </p>
-      <p>
-        Played a key role in debugging and resolving critical bugs, improving platform stability and user
-        experience. Contributed to core development and ensured high-quality code delivery in collaboration
-        with QA and engineering teams.
-      </p>
+      <h3>GST Filing & Reconciliation – Supertax</h3>
+      <ul>
+        <li>Led backend engineering efforts on a flagship GST compliance platform.</li>
+        <li>Developed robust modules for users to upload and reconcile invoices, compare transaction records, and interact directly with the GST portal.</li>
+        <li>Leveraged RESTful services to integrate external APIs and implemented data validation and error-handling mechanisms.</li>
+        <li>Responsibilities included bug resolution, API testing, and collaborating with QA for seamless deployments.</li>
+        <li>Improved system significantly boosted operational reliability and reduced client-side issues, directly impacting user satisfaction.</li>
+      </ul>
     </div>
   </section>
 
   <section id="resume">
-    <h2>📄 Resume</h2>
-    <a href="assets/resume.pdf" download>Download Resume (PDF)</a>
-  </section>
-
-  <section id="contact">
-    <h2>📬 Contact</h2>
-    <p><strong>Email:</strong> <a href="mailto:krushngshh@gmail.com">krushngshh@gmail.com</a></p>
-    <p><strong>Phone:</strong> +91-8866726303</p>
-    <p><strong>LinkedIn:</strong> <a href="https://in.linkedin.com/in/krushang-shah" target="_blank">krushang-shah</a></p>
+    <h2>Resume</h2>
+    <a class="button" href="assets/resume.pdf" download>Download Resume</a>
   </section>
 
   <footer>
-    <p>&copy; 2025 Krushang Shah. Built with ❤️ and clean code.</p>
+    <p>© 2025 Krushang Shah • Crafted with clean code & confidence</p>
   </footer>
 </body>
 </html>
